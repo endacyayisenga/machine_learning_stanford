@@ -24,13 +24,14 @@
 %
 
 %% Initialization
-clear ; close all; clc
+clear; close all; clc
 
 %% ==================== Part 1: Basic Function ====================
 % Complete warmUpExercise.m 
 fprintf('Running warmUpExercise ... \n');
 fprintf('5x5 Identity Matrix: \n');
-warmUpExercise()
+
+A = eye(5);  % Replaced warmUpExercise.m
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
@@ -53,11 +54,11 @@ pause;
 fprintf('Running Gradient Descent ...\n')
 
 X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
-theta = zeros(2, 1); % initialize fitting parameters
+theta = zeros(2, 1);         % Initialize fitting parameters
 
 % Some gradient descent settings
-iterations = 1500;
-alpha = 0.01;
+iterations = 1500;           % Number of iterations
+alpha = 0.01;                % Learning rate
 
 % compute and display initial cost
 computeCost(X, y, theta)

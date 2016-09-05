@@ -70,10 +70,6 @@ for ii = 1 : num_labels
     %  This function will return theta and the cost 
     all_theta(ii,:) = ...
         fminunc(@(t)(lrCostFunction(t, X, y==ii,lambda)), all_theta(ii,:)', options);
-
-
-
-
 end
 
 

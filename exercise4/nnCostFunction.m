@@ -61,10 +61,10 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
-
+% One-hot encoding
 y_matrix = bsxfun(@eq, y, 1 : num_labels);
-a1 = [ones(m,1), X];
 
+a1 = [ones(m,1), X];
 a2 = [ones(m,1) sigmoid(a1*Theta1')];
 a3 = sigmoid(a2*Theta2');
 
@@ -73,10 +73,10 @@ a3 = sigmoid(a2*Theta2');
 J = (1 / m) * sum( sum( -log(a3).*y_matrix - log(1 - a3).*(1 - y_matrix) ) );
 
 
-% Regularized cost function
+% Regularized cost function (on both Theta1 and Theta2)
 J = J + lambda/(2*m) * (sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^2)) );
 
-
+% backpropagation
 for ii = 1 : m
     a1 = [1, X(ii,:)];
     z2 = a1*Theta1';

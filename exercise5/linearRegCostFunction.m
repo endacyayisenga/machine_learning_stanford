@@ -10,7 +10,7 @@ m = length(y); % number of training examples
 
 % You need to return the following variables correctly 
 
-grad = zeros(size(theta));
+% grad = zeros(size(theta));
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost and gradient of regularized linear 

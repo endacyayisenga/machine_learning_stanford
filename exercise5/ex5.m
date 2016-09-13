@@ -16,7 +16,7 @@
 %
 
 %% Initialization
-clear ; close all; clc
+clear; close all; clc
 
 %% =========== Part 1: Loading and Visualizing Data =============
 %  We start the exercise by first loading and visualizing the dataset. 
@@ -83,7 +83,7 @@ pause;
 
 %  Train linear regression with lambda = 0
 lambda = 0;
-[theta] = trainLinearReg([ones(m, 1) X], y, lambda);
+theta = trainLinearReg([ones(m, 1) X], y, lambda);
 
 %  Plot fit over the data
 plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
